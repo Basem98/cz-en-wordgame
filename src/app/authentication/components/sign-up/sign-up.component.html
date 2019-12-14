@@ -1,0 +1,61 @@
+<div class="form-wrapper">
+    <form [formGroup]="userData" (ngSubmit)="register()" class="signup-form">
+        <mat-form-field appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input matInput type="text" id="fullName" formControlName="fullName" required>
+            <mat-error *ngIf="userData.controls['fullName']['errors']?.required">
+                <p>* Please enter your full name</p>
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline" style="margin-bottom: 8px;">
+            <mat-label>Country</mat-label>
+            <mat-select formControlName="country">
+                <mat-option *ngFor="let country of countriesList" [value]="country">
+                    {{ country }}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="userData.controls['country']['errors']">
+                <p>* Please select your country from the list</p>
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline" style="height: 100px !important;">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" id="email" formControlName="email" required>
+            <mat-error *ngIf="userData.controls['email']?.invalid">
+                <p>* Please enter a valid email address</p>
+            </mat-error>
+            <mat-error *ngIf="userData.controls['email']['errors']?.required">
+                <p>* Please enter your email address</p>
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <br>
+        <br>
+        <mat-form-field appearance="outline" style="height: 150px !important; margin: 1px;">
+            <mat-label>Username</mat-label>
+            <input matInput type="text" id="username" formControlName="username" required>
+            <mat-error *ngIf="userData.controls['username']['errors']?.required">
+                <p>* Please enter a username so that other users can interact with you</p>
+            </mat-error>
+            <mat-error *ngIf="userData.controls['username']['errors']?.invalid">
+                <p>* Your username must be 6-12 characters long
+                    and it can only consist of alphanumeric characters</p>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="height: 150px !important; margin: 1px;">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" id="password" formControlName="password" required>
+            <mat-error *ngIf="userData.controls['password']['errors']?.required">
+                <p>* Please enter a password</p>
+            </mat-error>
+            <mat-error *ngIf="userData.controls['password']['errors']">
+                <p>* Your password must be 8-20 characters long</p>
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <br>
+        <button mat-raised-button color="accent" type="submit" [disabled]="!notClicked">Sign Up</button>
+    </form>
+</div>

@@ -1,0 +1,12 @@
+<div>
+    <h5 mat-dialog-title>
+        Good news, {{ currentUser.username }}! You have ranked up!
+    </h5>
+    <h6 mat-dialog-content>
+        Your new title is {{ currentUser.title }}
+    </h6>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="accent" (click)="onCheckNewTitle()">Check New Title</button>
+        <button mat-raised-button color="accent" (click)="onContinuePlaying()">Continue Playing</button>
+    </div>
+</div>

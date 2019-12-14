@@ -1,0 +1,13 @@
+.form-wrapper{
+    text-align: center;
+    padding-top: 30px;
+    
+}
+
+.signin-form{
+    display: inline-block;
+    padding: 30px;
+    width: 600px;
+    background-color: rgb(199, 198, 198);
+    border-radius: 10px;
+}

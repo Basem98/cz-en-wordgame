@@ -1,0 +1,24 @@
+<div class="words-table-container">
+    <div class="words-table-div">
+        <input type="text" class="filter-input" placeholder="Filter by word" #specificWord (keyup)="filterByWordOrLanguage(specificWord.value.toLowerCase(), null)"/>
+        <select #specificLang (mouseup)="filterByWordOrLanguage(null, specificLang.value.toLowerCase())" class="languages-list">
+            <option value="'undefined'">All Words</option>
+            <option value="cz">Czech</option>
+            <option value="en">English</option>
+        </select>
+        <table class="words-table">
+            <thead>
+                <th>Word</th>
+                <th>Language</th>
+                <th>Meaning</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let word of filteredWordsList" class="table-rows">
+                    <td>{{ word.word }}</td>
+                    <td>{{ word.lang }}</td>
+                    <td>{{ word.meaning }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+.players-list {
+    text-align: center;
+    height: 150px;
+    background-color: #212529;
+    color: #ff4081;
+    border: solid #343a40;
+}
+
+.top-player-info {
+    padding-top: 20px;
+}

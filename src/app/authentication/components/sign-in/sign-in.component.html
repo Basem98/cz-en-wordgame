@@ -1,0 +1,21 @@
+<div class="form-wrapper">
+    <form [formGroup]="userData" (ngSubmit)="login()" class="signin-form">
+        <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput type="username" id="username" formControlName="username" required>
+            <mat-error *ngIf="userData.controls['username']['errors']?.required">
+                * Please enter a username
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" id="password" formControlName="password" required>
+            <mat-error *ngIf="userData.controls['password']['errors']?.required">
+                * Please enter a password
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="accent" type="submit">Sign In</button>
+    </form>
+</div>

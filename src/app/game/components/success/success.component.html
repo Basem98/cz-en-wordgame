@@ -1,0 +1,13 @@
+<div>
+    <h4 mat-dialog-title>
+        Good Job, {{ username }}! You got the word right!
+    </h4>
+    <h6 mat-dialog-content>
+        Your score is now {{ updatedScore }} points!
+    </h6>
+    <div mat-dialog-actions>
+        <button mat-raised-button color='accent' (click)="onContinuePlaying()">Continue Playing</button>
+        <button mat-raised-button color='accent' (click)="onCheckGameHistory()">Check My Game History</button>
+        <button mat-raised-button color='accent' (click)="onStopPlaying()">Stop Playing</button>
+    </div>
+</div>

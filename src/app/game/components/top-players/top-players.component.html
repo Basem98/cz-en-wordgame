@@ -1,0 +1,9 @@
+<div>
+    <div *ngFor="let user of topPlayers" class="players-list">
+        <div class="top-player-info">
+            <h5>{{ user?.username }}</h5>
+            <p>{{ user?.title }}</p>
+            <p>{{ user?.score }}</p>
+        </div>
+    </div>
+</div>
