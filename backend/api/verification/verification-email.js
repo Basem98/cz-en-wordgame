@@ -2,6 +2,8 @@ const nodemailer = require('nodemailer');
 const { genVerificationToken } = require('../../database/logic/token-logic');
 const config = require('../../config/envConfig');
 
+
+// The function responsible for sending confirmation emails that contain the verification token to newly signed up users 
 async function sendConfirmationEmail(userEmail, userId, userFullname) {
   try {
     const token = await genVerificationToken(userId);

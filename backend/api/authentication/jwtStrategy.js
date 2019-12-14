@@ -2,6 +2,9 @@ const jwtPassport = require('passport-jwt');
 const config = require('../../config/envConfig');
 const { getUserById } = require('../../database/logic/user-logic');
 
+
+// Defining the JWT authentication strategy and exporting it to use it in the middleware authentication & authorization layer
+
 function establishAuthStrategy() {
   const extractJwt = jwtPassport.ExtractJwt;
   const JwtStrategy = jwtPassport.Strategy;

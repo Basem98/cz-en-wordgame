@@ -8,7 +8,6 @@ import { ChangedTitleComponent } from '../game/components/changed-title/changed-
   providedIn: 'root'
 })
 export class GameService {
-  // url: string = 'http://localhost:5000';
   headers: HttpHeaders = new HttpHeaders()
     .set("Authorization", `Bearer ${sessionStorage.getItem("JWT")}`);
 

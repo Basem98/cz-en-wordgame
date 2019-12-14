@@ -2,6 +2,10 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 const Word = require('../models/Word');
 
+
+// The part of the database logic that is responsible for all the database queries directed at the User model
+
+// Check the incoming score and based on it determine the user's title
 function setTitle(score) {
   let title;
   if (score <= 250) {
@@ -30,6 +34,8 @@ function setTitle(score) {
   return title;
 }
 
+
+// Creating a new user and saving them in the database
 async function createUser(userData) {
   try {
     const paramData = userData;
@@ -44,7 +50,7 @@ async function createUser(userData) {
   }
 }
 
-
+// The query responsible for updating the user score and title in the database and returning them to the client
 async function updateScoreAndTitle(id, currentScore) {
   try {
     const setNewTitle = setTitle;
@@ -60,6 +66,7 @@ async function updateScoreAndTitle(id, currentScore) {
   }
 }
 
+// The query that continuously adds newly solved words to the gameHistory array in the User model
 async function updateCurrentUserHistory(userId, newWord) {
   try {
     const currentUser = await getUserById(userId);
@@ -106,6 +113,7 @@ async function getUserByEmail(email) {
   }
 }
 
+// The query that returns a list of the top ten players across the whole game
 async function sortUsersByScore() {
   try {
     const sortedUsers = await User.find().sort({'score': 'desc'});

@@ -17,6 +17,9 @@ const {
 const { sendConfirmationEmail } = require('../verification/verification-email');
 const { isTokenVerified } = require('../../database/logic/token-logic');
 
+
+// The controllers for the endpoints that are accessible to the users, on which the application as a whole depends
+
 function signup(req, res) {
   const newUser = req.body;
   createUser(newUser).then(async (user) => {

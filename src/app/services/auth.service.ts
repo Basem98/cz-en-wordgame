@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  // url: string = 'http://localhost:5000';
   loggedIn: BehaviorSubject<boolean> = new BehaviorSubject(true);
 
   constructor(
@@ -35,7 +34,6 @@ export class AuthService {
   verifyUser(verificationData: { email: string, token: string }): Observable<any> {
     return this.http.post('/confirmverification', verificationData).pipe(map((response: any) => {
       if (response && response.success) {
-        console.log('Response has a successfil property that is true')
         sessionStorage.removeItem('currentUser');
         sessionStorage.setItem('currentUser', JSON.stringify(response.user));
         return response;
@@ -46,7 +44,6 @@ export class AuthService {
   }
 
   reverifyUser(verificationEmail: string): Observable<any> {
-    console.log('I am reverifying');
     return this.http.post('/resendverification', {email: verificationEmail});
   }
 

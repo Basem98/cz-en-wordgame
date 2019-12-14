@@ -2,6 +2,9 @@ const Token = require('../models/Token');
 const bcrypt = require('bcryptjs');
 const uuid = require('uuid/v4');
 
+
+// The part of the database logic that is responsible for generating a verification token and verifying it
+
 async function genVerificationToken(userId) {
   try {
     const salt = await bcrypt.genSalt(10);

@@ -11,6 +11,11 @@ function insertWord(newWord, newMeaning, lang) {
   }
 }
 
+/*
+This function's main responsibility is to return an array of 3 words and their meaning, which formulate the game box on the client side.
+Before returing that array, it checks whether each word in it exists in the current user's gameHistory array in the database or not
+and it also makes sure that each one of the three words is unique and that none of them are repeated
+ */
 async function getRandomWords(lang, userId) {
   let chosenWords = [];
   const allWords = await Word.find({ lang: lang });

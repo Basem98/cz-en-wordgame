@@ -1,3 +1,5 @@
+// The middleware function that is responsible for the data validation process
+
 function validateSignup(req, res, next) {
   const { username, email, password, fullName } = req.body;
   if (password && email && username && fullName) {
