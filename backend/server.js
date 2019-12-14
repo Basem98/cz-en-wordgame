@@ -8,7 +8,7 @@ const connectToDatabase = require('./config/connectToDb');
 const strategy = establishAuthStrategy().generate();
 const server = express();
 
-server.use(cors({ origin: 'http://localhost:4200' }));
+server.use(cors({ origin: '*' }));
 passport.use(strategy);
 server.use(passport.initialize());
 server.use(express.json());
@@ -17,5 +17,5 @@ server.use('/', require('./api/routes'));
 
 connectToDatabase(config.DB.URL);
 server.listen(config.APP.PORT, () => {
-  console.log(`Server is running on http://localhost:${config.APP.PORT}`);
+  console.log(`Server is running on ${config.APP.PORT}`);
 });

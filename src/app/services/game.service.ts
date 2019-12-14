@@ -8,7 +8,7 @@ import { ChangedTitleComponent } from '../game/components/changed-title/changed-
   providedIn: 'root'
 })
 export class GameService {
-  url: string = 'http://localhost:5000';
+  // url: string = 'http://localhost:5000';
   headers: HttpHeaders = new HttpHeaders()
     .set("Authorization", `Bearer ${sessionStorage.getItem("JWT")}`);
 
@@ -16,7 +16,7 @@ export class GameService {
 
   getWordsForGame(lang): Promise<any> {
     return this.http.post(
-      this.url + `/getrandomwords/${lang}`,
+      `/getrandomwords/${lang}`,
       {userId: JSON.parse(sessionStorage.getItem('currentUser'))['_id']},
       { headers: this.headers }
     ).pipe(map((response: any) => {
@@ -29,7 +29,7 @@ export class GameService {
 
   updateGameInfo(newGameInfo: { id: string, score: number }): Promise<any> {
     return this.http.put(
-      this.url + '/updategameinfo',
+      '/updategameinfo',
       newGameInfo,
       { headers: this.headers }
     ).pipe(map((response: any) => {
@@ -51,7 +51,7 @@ export class GameService {
 
   updateGameHistory(newGameHistory: { id: string, newWord: string }): Promise<any> {
     return this.http.put(
-      this.url + '/updategamehistory',
+      '/updategamehistory',
       newGameHistory,
       { headers: this.headers }
     ).pipe(map((response: any) => {
@@ -65,7 +65,7 @@ export class GameService {
 
   getTopTen(): Promise<any> {
     return this.http.get(
-      this.url + '/gettopten',
+      '/gettopten',
       { headers: this.headers }
     ).pipe(map((response: any) => {
       if (response && response.success) {

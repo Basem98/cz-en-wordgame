@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  url: string = 'http://localhost:5000';
+  // url: string = 'http://localhost:5000';
   loggedIn: BehaviorSubject<boolean> = new BehaviorSubject(true);
 
   constructor(
@@ -17,11 +17,11 @@ export class AuthService {
   ) { }
 
   signUp(newUser: User): Observable<any> {
-    return this.http.post(this.url + '/signup', newUser);
+    return this.http.post('/signup', newUser);
   }
 
   signIn(userData: { username: string, password: string }): Observable<any> {
-    return this.http.post(this.url + '/signin', userData).pipe(map((response: any) => {
+    return this.http.post('/signin', userData).pipe(map((response: any) => {
       if (response && response.success) {
         sessionStorage.setItem('JWT', response.token);
         sessionStorage.setItem('currentUser', JSON.stringify(response.user));
@@ -33,7 +33,7 @@ export class AuthService {
   }
 
   verifyUser(verificationData: { email: string, token: string }): Observable<any> {
-    return this.http.post(this.url + '/confirmverification', verificationData).pipe(map((response: any) => {
+    return this.http.post('/confirmverification', verificationData).pipe(map((response: any) => {
       if (response && response.success) {
         console.log('Response has a successfil property that is true')
         sessionStorage.removeItem('currentUser');
@@ -47,7 +47,7 @@ export class AuthService {
 
   reverifyUser(verificationEmail: string): Observable<any> {
     console.log('I am reverifying');
-    return this.http.post(this.url + '/resendverification', {email: verificationEmail});
+    return this.http.post('/resendverification', {email: verificationEmail});
   }
 
   signOut() {

@@ -1,0 +1,12 @@
+.homepage-header {
+    color: #f8f9fa;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.homepage-footer {
+    position: fixed;
+    bottom: 0;
+    color: #f8f9fa;
+    font-size:12px;
+}
