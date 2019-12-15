@@ -9,3 +9,5 @@
 * It's also made in a way that it never lets the user answer the same word twice. There's a function the filters the words returned and only return the words that the user has never seen before
 
 * I also made a gameHistory array to store the words the user has solved, for the sake of allowing user to come back to what they solved before to remember it
+
+* I wrote all the words in the database myself from the dictionaries I use to study (I am majoring in Czech studies), which are Meriam-Webster (English) and nechybujte.cz (Czech)
