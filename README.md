@@ -1,27 +1,11 @@
 # CzWordGame
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+* This is a word game that has both a czech and an english version. The whole purpose of this was to practice the process of turning ideas to actual functional apps no matter how abstract or primitive they might look, but my whole purpose was to actually think of something that might sound (to me) a bit difficult to create and to actually plan it and create it from nothing, because I don't like following tutorials and copying code.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## How does it work?
+* This is just a basic word game that has two versions, but the thing that I thought word games missed (not all of them, just the ones I encountered) is a leveling system or in other words, a sense of achievement. So I implemented that and put the function that handles the titles and the scores in the backend just to try to make the UI as functional and smooth as possible. 
 
-## Code scaffolding
+* It's also made in a way that it never lets the user answer the same word twice. There's a function the filters the words returned and only return the words that the user has never seen before
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* I also made a gameHistory array to store the words the user has solved, for the sake of allowing user to come back to what they solved before to remember it
