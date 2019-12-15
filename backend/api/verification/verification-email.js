@@ -20,9 +20,13 @@ async function sendConfirmationEmail(userEmail, userId, userFullname) {
       to: userEmail,
       from: 'basem@czWordgame.com',
       subject: 'Verification Mail',
-      text: '\n Hello, ' + userFullname
-      + '\n Please copy the token below and paste it in the verification form, to which you will be redirected when you try to sign in'
-      + '\n\n Token: ' + token
+      text: 'Hello, '+ userFullname
+      + '\nI am delighted to tell you that you have successfully signed up, but there is only one step left. '
+      + 'You need to go to the link below and click on (Verify) to verify your email and enjoy the game! '
+      + `\n\n http://localhost:4200/authentication/verify/${token}`
+      + '\n\n\nThank you for your patience!'
+      + '\nBest Regards!'
+      + '\nBasem Mostafa'
     };
 
     const emailSent = await transporter.sendMail(mailOptions);

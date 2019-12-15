@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { VerificationComponent } from './components/verification/verification.component';
 
 
 const routes: Routes = [
@@ -13,7 +13,8 @@ const routes: Routes = [
     path: 'signin', component: SignInComponent
   },
   {
-    path: 'emailverification', component: VerifyEmailComponent
+    path: 'verify/:token',
+    component: VerificationComponent
   }
 ];
 

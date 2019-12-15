@@ -111,7 +111,12 @@ function resendVerification(req, res) {
     if (confirmationSent) {
       res.json({
         success: true,
-        msg: `A verification email has been sent to ${user.email}`
+        msg: `A verification email has been sent to ${currentUser.email}`
+      });
+    } else {
+      res.json({
+        success: false,
+        msg: 'Something went wrong. Please try again'
       });
     }
   })
