@@ -43,6 +43,7 @@ export class SignUpComponent implements OnInit {
         this.router.navigate(['/authentication/signin']);
         alert(JSON.stringify(response.msg));
       } else {
+        this.notClicked = true;
         alert(response.msg);
       }
     }
