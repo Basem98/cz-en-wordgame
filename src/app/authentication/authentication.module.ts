@@ -5,22 +5,24 @@ import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
-import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { VerificationComponent } from './components/verification/verification.component';
 
 @NgModule({
   declarations: [
     SignInComponent,
     SignUpComponent,
-    VerifyEmailComponent
+    VerificationComponent
   ],
   imports: [
     CommonModule,
     AuthenticationRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,

@@ -26,7 +26,10 @@ export class SignInComponent implements OnInit {
         if (response && response.user && response.user.isVerified) {
             this.router.navigate(['/']).then(() => window.location.reload());
         } else if (response.user && !response.user.isVerified) {
-          this.router.navigate(['/authentication/emailverification']);
+          alert(
+            'This account is not verified yet. If you recieved a verification email, click on the link in it and verify your account before signing in.'
+            + 'If you did not, click on this link https://czenwordgame1.herokuapp.com/authentication/verify/1 and write down your email and click on Resend Verification Mail'
+            );
         } else {
           alert(response.msg);
         }
