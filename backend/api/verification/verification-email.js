@@ -23,7 +23,7 @@ async function sendConfirmationEmail(userEmail, userId, userFullname) {
       text: 'Hello, '+ userFullname
       + '\nI am delighted to tell you that you have successfully signed up, but there is only one step left. '
       + 'You need to go to the link below and click on (Verify) to verify your email and enjoy the game! '
-      + `\n\n http://localhost:4200/authentication/verify/${token}`
+      + `\n\n https://czenwordgame1.herokuapp.com/authentication/verify/${token}`
       + '\n\n\nThank you for your patience!'
       + '\nBest Regards!'
       + '\nBasem Mostafa'
