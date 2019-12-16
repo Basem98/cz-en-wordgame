@@ -37,6 +37,9 @@ export class SignUpComponent implements OnInit {
   register() {
     this.notClicked = false;
     this.newUser = this.userData.value;
+    this.newUser.fullName = this.newUser.fullName.replace(/^\s+/, "");
+    this.newUser.fullName = this.newUser.fullName.replace(/\s+$/, "");
+    this.newUser.fullName = this.newUser.fullName.replace(/\s\s/g, " ");
     this.authService.signUp(this.newUser).subscribe({
       next: (response: any) => {
       if (response && response.success) {
