@@ -41,10 +41,10 @@ export class GameBoxComponent implements OnInit {
           }
         });
       }
-    }, 10000);
+    }, 30000);
     setInterval(() => {
       this.progressBarValue += 1;
-    }, 100);
+    }, 300);
     }
 
   onSubmit() {
@@ -57,7 +57,7 @@ export class GameBoxComponent implements OnInit {
     }
 
     if (this.finalAnswer == this.chosenWord.word) {
-      const newScore = this.currentUser.score + 20;
+      const newScore = this.currentUser.score + 10;
       this.dialogRef.close();
       this.newDialog.open(SuccessComponent, {
         width: '700px',
