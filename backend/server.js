@@ -20,6 +20,8 @@ server.use(passport.initialize());
 // The Parsing Layer
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
+
+// The router
 server.use('/', require('./api/routes'));
 
 // The function responsible for viewing the index.html folder
